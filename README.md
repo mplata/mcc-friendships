@@ -5,4 +5,4 @@
 Alumno: Luis Marcos Plata Delgado
 
 ## Diagrama de clases
-![alt text](https://raw.githubusercontent.com/mplata/mcc-friendships/master/frienships.png)
+![alt text](https://raw.githubusercontent.com/mplata/mcc-friendships/master/friendships.png)
