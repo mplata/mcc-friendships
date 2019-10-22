@@ -1,0 +1,20 @@
+0 amigo 3
+0 amigo 6
+0 amigo 4
+4 amigo 9
+4 amigo 1
+Daniel,Leyva,M,20/02/1995 amigo Marcos,Plata,M,31/10/1986
+6 amigo 2
+2 amigo 5
+5 amigo 1
+6 amigo 5
+0 eliminar 3
+0 eliminar Marcos,Plata,M,31/10/1986
+7 amigo 4
+Manuel,Medrano,M,02/12/1995 amigo 2
+3 amigo 8
+0 amigos 3
+2 amigos 0
+amigos 0 4
+11 amigo 2
+dsakdjsak
