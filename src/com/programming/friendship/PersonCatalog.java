@@ -65,7 +65,7 @@ public class PersonCatalog {
 		boolean isIndex = false;
 		try {
 			int position = Integer.valueOf(line);
-			if(position >= this.persons.size() || position < 0) {
+			if(position > this.persons.size() || position < 1) {
 				return null;
 			}
 			person = this.get(position);
@@ -82,6 +82,7 @@ public class PersonCatalog {
 		}
 		return person;
 	}
+	
 	private Person parseFromLine(String line) throws ParseException {
 		
 		Matcher matcher = PATTERN.matcher(line);

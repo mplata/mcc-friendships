@@ -25,7 +25,7 @@ public class FriendshipParser implements Iterator<LineResult>{
 	private final String DIRECT_FRIENDSHIP_PATTERN = "\\d+\\s*amigos\\s*\\d+|"+PERSON_PATTERN+"\\s*amigos\\s*"+PERSON_PATTERN+"|"+PERSON_PATTERN+"\\s*amigos\\s*\\d|\\s*\\d+\\s*amigos\\s*"+PERSON_PATTERN;
 	private final String FRIENDSHIP_LEVEL = "amigos\\s*([a-zA-Z\\s*]{1,20}\\s*,\\s*[a-zA-Z\\s*]{1,20}\\s*,\\s*[MmFf]\\s*,\\s*\\d{2}[\\/]\\d{2}[\\/]\\d{4})\\s*(\\d+)|amigos\\s*(\\d+)\\s*(\\d+)";
 	
-	public FriendshipParser(String route) {
+	public FriendshipParser() {
 		
 		Scanner sc = null;
 		JFileChooser file=new JFileChooser();
@@ -123,7 +123,7 @@ public class FriendshipParser implements Iterator<LineResult>{
 		}else {
 			result.setType(LineType.INVALID_LINE);
 			result.setLine(line);
-			System.out.println("Line invalid "+line);
+			System.out.println("Linae invalida "+line);
 		}
 		this.currentIndex++;
 		return result;

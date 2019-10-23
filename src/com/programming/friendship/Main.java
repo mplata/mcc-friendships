@@ -10,7 +10,9 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		//Listado de personas y el 
+		//Bote de basta
 		List<Person> persons = null; 
 		TrashCan trashCan = null;
 		try {
@@ -21,17 +23,21 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		//Se agregan todas las personas del catalogo al grafo,
+		//sin conexiones
 		Graph<Person> graph = new Graph<Person>();
 		for (Person person : persons) {
 			graph.addNode(person);
 		}
-		//System.out.println(graph);
-		FriendshipParser parser = new FriendshipParser("./friendships.txt");
+		//Se crea el parser
+		FriendshipParser parser = new FriendshipParser();
 		
 		LineResult result;
 		Person first;
 		Person second;
-		
+		//Se procesa cada linea, y se hace
+		//algo dependiendo del tipo de linea del
+		//Comando
 		while (parser.hasNext()){
 			result = parser.next();
 			LineType type = result.getType();
@@ -40,6 +46,8 @@ public class Main {
 				first = result.getFirst();
 				second = result.getSecond();
 				graph.addBiEdge(first, second);
+				System.out.println("!"+first+" y "+second+" ahora son amigos!");
+				System.out.println("");
 				
 			}
 			else if(type == LineType.DIRECT_FRIENDSHIP) {
@@ -48,7 +56,8 @@ public class Main {
 				second = result.getSecond();
 				boolean areDirect = graph.areAdjacents(first, second);
 				String directRes = areDirect?"Verdadero":"Falso";
-				System.out.println(directRes);
+				System.out.println("¿Es "+first+" amigo de "+second+"? "+directRes);
+				System.out.println("");
 				
 			}else if(type == LineType.FRIENDS_LEVEL) {
 				
@@ -59,13 +68,15 @@ public class Main {
 				String joined = String.join(",",asString);
 				System.out.print("Amigos nivel "+level+" de "+first+": ");
 				System.out.println(joined);
+				System.out.println("");
 				
 			}else if(type == LineType.REMOVE_FRIENDSHIP) {
 				
 				first = result.getFirst();
 				second = result.getSecond();
-				//System.out.println("Eliminar amistad: "+first+","+second);
+				System.out.println("Eliminar amistad: "+first+","+second);
 				graph.removeBiEdge(first, second);
+				System.out.println("");
 				
 			}else if(type == LineType.INVALID_LINE) {
 				
@@ -73,8 +84,9 @@ public class Main {
 				
 			}
 		}
+		
+		//Al final, mandamos la basura a disco
 		trashCan.trowTrash();
-		//System.out.println(graph);
 	}
 
 }

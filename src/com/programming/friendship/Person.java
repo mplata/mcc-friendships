@@ -64,12 +64,12 @@ public class Person{
 		if (lastName == null) {
 			if (other.lastName != null)
 				return false;
-		} else if (!lastName.equals(other.lastName))
+		} else if (!lastName.equalsIgnoreCase(other.lastName))
 			return false;
 		if (name == null) {
 			if (other.name != null)
 				return false;
-		} else if (!name.equals(other.name))
+		} else if (!name.equalsIgnoreCase(other.name))
 			return false;
 		if (Character.toLowerCase(sex) != Character.toLowerCase(other.sex))
 			return false;
